@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CHEST_STORIES, bandsWithStories } from "../lib/sites";
 import { NARRATOR_CREDIT } from "../lib/stories";
-import { WaitlistForm } from "../components/WaitlistForm";
 
 export const Route = createFileRoute("/treasure-chest")({
   component: TreasureChestPage,
@@ -100,16 +99,6 @@ function TreasureChestPage() {
           </div>
         </section>
       ))}
-      <section className="rounded-3xl bg-white/70 p-8 text-center shadow-sm">
-        <h2 className="brand-display text-2xl text-ink">Not ready to subscribe yet?</h2>
-        <p className="mx-auto mt-2 max-w-xl text-ink-soft">
-          Hang on to your spot and we'll let you know as new stories, narration, and keepsake books
-          arrive.
-        </p>
-        <div className="mt-6 flex justify-center">
-          <WaitlistForm source="treasure-chest" />
-        </div>
-      </section>
     </div>
   );
 }

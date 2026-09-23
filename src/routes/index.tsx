@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { FREE_STORIES, STORY_MAP } from "../lib/sites";
 import { NARRATOR_CREDIT } from "../lib/stories";
-import { WaitlistForm } from "../components/WaitlistForm";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -197,17 +196,6 @@ function HomePage() {
               <p className="mt-2 text-sm text-ink-soft">{w.body}</p>
             </Link>
           ))}
-        </div>
-      </section>
-
-      <section className="mt-16 rounded-3xl bg-white/70 p-8 text-center shadow-sm">
-        <h2 className="brand-display text-3xl text-ink">Join the waitlist</h2>
-        <p className="mx-auto mt-2 max-w-xl text-ink-soft">
-          New stories, recorded narration, and keepsake books are on the way. Be the first to hear
-          when something lovely arrives.
-        </p>
-        <div className="mt-6 flex justify-center">
-          <WaitlistForm source="landing" />
         </div>
       </section>
     </div>
