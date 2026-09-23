@@ -270,7 +270,7 @@ function GatedStory({ story }: { story: Story }) {
             Subscribe · $3.99/mo
           </a>
           <a
-            href="https://buy.stripe.com/8x2bJ116t8xM0Jf3kj73G00"
+            href="https://buy.stripe.com/aFa00l7U5czybVSb95eIw0U"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-line"
