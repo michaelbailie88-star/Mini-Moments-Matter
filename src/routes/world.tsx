@@ -8,7 +8,7 @@ export const Route = createFileRoute("/world")({
   component: WorldPage,
 });
 
-const BUY_URL = "https://buy.stripe.com/8x2bJ116t8xM0Jf3kj73G00";
+const BUY_URL = "https://buy.stripe.com/aFa00l7U5czybVSb95eIw0U";
 const PRICE = "$2.99";
 
 function WorldPage() {
