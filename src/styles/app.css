@@ -1,0 +1,340 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-body);
+  --font-body: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  --color-pink-p: #fbd9e8;
+  --color-pink-p2: #f7c8de;
+  --color-pink-p3: #ef9dc4;
+  --color-blue-p: #cbeafa;
+  --color-blue-p2: #b3e0f7;
+  --color-yellow-p: #fbeec2;
+  --color-yellow-p2: #f7e4aa;
+  --color-green-p: #dbf0e4;
+  --color-green-p2: #c5e8d3;
+  --color-green-p3: #8fd2aa;
+  --color-red-p: #fbd5cd;
+  --color-red-p2: #f6c3b8;
+  --color-red-p3: #ec968a;
+  --color-purple-p: #e4d8f4;
+  --color-purple-p2: #d4c1ed;
+  --color-purple-p3: #b191dd;
+
+  --color-ink: #5a2440;
+  --color-ink-soft: #7d4a63;
+  --color-wood: #c68b5c;
+  --color-wood-mid: #b97b4f;
+  --color-wood-dark: #9c643f;
+  --color-wood-light: #d8a475;
+  --color-cream: #fffaf3;
+
+  --animate-pull: pull 0.9s cubic-bezier(0.34, 1.3, 0.5, 1) forwards;
+
+  --text-3xl--line-height: 1.2;
+}
+
+@layer base {
+  html,
+  body {
+    @apply bg-cream text-ink antialiased;
+    font-family: var(--font-body);
+  }
+}
+
+@layer components {
+  .brand-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+    font-weight: 600;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold text-ink shadow-[0_2px_rgba(90,36,64,0.12)] transition-all;
+  }
+
+  .btn-pastel {
+    background: linear-gradient(90deg, var(--color-pink-p), var(--color-yellow-p), var(--color-blue-p), var(--color-green-p), var(--color-purple-p));
+  }
+
+  .btn-ink {
+    @apply bg-ink text-white;
+  }
+
+  .btn-line {
+    background: #ffffffb3;
+    border: 1.5px solid #5a244040;
+  }
+
+  .nav-pill {
+    @apply inline-flex items-center justify-center flex-1 whitespace-nowrap rounded-full px-2 py-2 text-xs font-semibold text-ink-soft shadow-[inset_0_0_0_1px_rgba(90,36,64,0.08)] transition;
+  }
+
+  .nav-pill:hover {
+    @apply text-ink;
+    background: #fbd9e88c;
+  }
+
+  .nav-pill.active,
+  .nav-link.active {
+    background: linear-gradient(90deg, var(--color-pink-p), var(--color-blue-p), var(--color-yellow-p), var(--color-green-p), var(--color-red-p), var(--color-purple-p));
+    color: var(--color-ink);
+    font-weight: 700;
+    box-shadow: inset 0 1px #fffc, 0 2px 6px #5a244038;
+  }
+
+  .nav-link {
+    @apply rounded-full px-2.5 py-1.5 text-sm font-semibold text-ink-soft transition;
+  }
+
+  .bg-pastel-blend {
+    background:
+      radial-gradient(40% 55% at 12% 12%, #fbd9e8e6, #0000 65%),
+      radial-gradient(45% 60% at 88% 20%, #cbeafae6, #0000 65%),
+      radial-gradient(50% 60% at 75% 85%, #e4d8f4e6, #0000 65%),
+      radial-gradient(45% 55% at 15% 85%, #dbf0e4e6, #0000 65%),
+      radial-gradient(35% 45% at 50% 40%, #fbeec2b3, #0000 70%),
+      linear-gradient(#fffaf3, #fdf1f6);
+  }
+
+  .prose-story p {
+    margin: 0 0 0.9rem;
+    font-size: 1.08rem;
+    line-height: 1.75;
+  }
+  .prose-story h2 {
+    color: var(--color-ink);
+    margin: 1.4rem 0 0.6rem;
+    font-size: 1.4rem;
+  }
+  .prose-story h3 {
+    color: var(--color-ink);
+    margin: 1.2rem 0 0.5rem;
+    font-size: 1.2rem;
+  }
+  .prose-story strong {
+    color: var(--color-ink);
+  }
+  .prose-story ul {
+    margin: 0.4rem 0 0.9rem 1.3rem;
+    list-style: outside;
+  }
+  .prose-story ol {
+    margin: 0.4rem 0 0.9rem 1.3rem;
+    list-style: decimal;
+  }
+
+  .shelf {
+    background:
+      linear-gradient(#ffffff80, #ffffff1a),
+      linear-gradient(90deg, #e6c9a6, #d8b086, #e3c5a0);
+    border-radius: 16px;
+    width: 100%;
+    padding: 22px 18px 30px;
+    position: relative;
+    box-shadow: inset 0 2px 4px #fff9, 0 10px 24px #5a24402e;
+  }
+  .wood-light { background-color: var(--color-wood-light); }
+  .wood { background-color: var(--color-wood); }
+  .wood-mid { background-color: var(--color-wood-mid); }
+  .wood-dark { background-color: var(--color-wood-dark); }
+  .shelf-board {
+    background: linear-gradient(#9c643fe6, #7c4e31f2);
+    border-radius: 0 0 16px 16px;
+    height: 22px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 3px 6px #5a24404d;
+  }
+  .book {
+    transform-origin: 50% 100%;
+    border-radius: 6px 8px 4px 6px;
+    height: 210px;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+    box-shadow: 0 6px 14px #5a244047;
+  }
+  .book:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 22px #5a24404d;
+  }
+  .book .book-cover {
+    background-position: 50%;
+    background-size: cover;
+    border-radius: 6px 8px 4px 6px;
+    position: absolute;
+    inset: 0;
+  }
+  .book .book-spine {
+    background: #5a24402e;
+    border-radius: 6px 0 0 4px;
+    width: 8px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .filler {
+    user-select: none;
+    pointer-events: none;
+    flex-shrink: 0;
+  }
+  .overlay-book {
+    z-index: 60;
+    backdrop-filter: blur(2px);
+    background: #5a244059;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: fixed;
+    inset: 0;
+  }
+  .overlay-book.opening {
+    animation: 0.4s forwards fade;
+  }
+  .book-lift {
+    animation: var(--animate-pull);
+  }
+  .book-open {
+    width: min(560px, 86vw);
+    height: 320px;
+    transform-style: preserve-3d;
+    perspective: 1200px;
+    animation: 0.7s cubic-bezier(0.34, 1.2, 0.5, 1) forwards open;
+    position: relative;
+  }
+  .book-page {
+    text-align: center;
+    background: linear-gradient(#fffdf7, #fbeef5);
+    border-radius: 6px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    padding: 24px;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 20px 40px #5a244059;
+  }
+  .book-page.left {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    left: 0;
+  }
+  .book-page.right {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    right: 0;
+  }
+  .sparkle {
+    color: #f7d277;
+    animation: 1.4s ease-in-out infinite twinkle;
+    position: absolute;
+  }
+
+  .audio-shell {
+    align-items: center;
+    gap: calc(var(--spacing) * 3);
+    border-radius: var(--radius-2xl);
+    padding: calc(var(--spacing) * 3);
+    background: #ffffffbf;
+    border: 1.5px solid #5a24401f;
+    display: flex;
+  }
+  .play-btn {
+    height: calc(var(--spacing) * 12);
+    width: calc(var(--spacing) * 12);
+    color: var(--color-ink);
+    background: linear-gradient(135deg, var(--color-pink-p2), var(--color-blue-p2), var(--color-purple-p2));
+    border-radius: 9999px;
+    place-items: center;
+    display: grid;
+    box-shadow: 0 3px 8px #5a244038;
+  }
+  .treasure-box {
+    transform-origin: 50% 100%;
+    animation: 3.2s ease-in-out infinite bob;
+  }
+
+  .print-only {
+    display: none;
+  }
+
+  .print-header {
+    border-bottom: 2px solid var(--color-pink-p2);
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    display: flex;
+  }
+}
+
+@keyframes pull {
+  0% { transform: translate(0) rotate(0) scale(1); }
+  40% { transform: translate(-18px, -30px) rotate(-6deg) scale(1.4); }
+  to { transform: translate(0) rotate(0) scale(1); }
+}
+@keyframes open {
+  0% { opacity: 0.2; transform: rotateY(0) scale(0.6); }
+  to { opacity: 1; transform: rotateY(0) scale(1); }
+}
+@keyframes fade {
+  0% { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes twinkle {
+  0%, to { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+@keyframes bob {
+  0%, to { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-lift {
+    animation: none;
+  }
+  .book-open {
+    animation: 0.45s forwards fade;
+  }
+  .book,
+  .book:hover {
+    transition: none;
+  }
+  .sparkle {
+    animation: none;
+  }
+}
+
+@media print {
+  body {
+    color: #111 !important;
+    background: #fff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-header {
+    display: flex;
+  }
+  a {
+    color: #111;
+    text-decoration: none;
+  }
+  .story-card,
+  .book,
+  .shelf,
+  .audio-shell {
+    box-shadow: none !important;
+  }
+}
