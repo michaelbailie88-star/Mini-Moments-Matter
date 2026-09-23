@@ -2,7 +2,6 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ALL_STORIES, bandsWithStories } from "../lib/sites";
 import { NARRATOR_CREDIT } from "../lib/stories";
 import { Shelf } from "../components/Bookcase";
-import { WaitlistForm } from "../components/WaitlistForm";
 
 export const Route = createFileRoute("/world")({
   component: WorldPage,
@@ -22,18 +21,6 @@ function WorldPage() {
         </p>
         <p className="mx-auto mt-2 max-w-2xl text-sm text-ink-soft">{NARRATOR_CREDIT}</p>
       </header>
-      <section className="mb-10 rounded-3xl bg-white/70 p-8 text-center shadow-sm">
-        <span className="text-4xl">✨</span>
-        <h2 className="brand-display mt-2 text-2xl text-ink">250+ activity stories are on the way</h2>
-        <p className="mx-auto mt-2 max-w-xl text-ink-soft">
-          This is just the beginning. We're building a much larger World of Mini Moments, released in
-          gentle batches as each one is written, recorded, and illustrated. Sign up below and we'll
-          let you know when the next batch lands.
-        </p>
-        <div className="mt-6 flex justify-center">
-          <WaitlistForm source="world" />
-        </div>
-      </section>
       {bandsWithStories.map(({ band, stories }) => (
         <section key={band.key} className="mb-10">
           <div className="mb-3 flex items-center gap-3">
